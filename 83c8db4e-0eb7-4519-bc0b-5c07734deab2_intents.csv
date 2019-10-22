@@ -1,0 +1,20 @@
+Do you have coffee?,buy_coffee
+I would like some coffee.,buy_coffee
+Do you sell coffee here?,buy_coffee
+I want coffee.,buy_coffee
+How much is coffee?,buy_coffee
+Can I have some coffee?,buy_coffee
+Can I buy coffee?,buy_coffee
+Is it worth it?,coffee_info
+Why should I buy your coffee?,coffee_info
+What's special about your coffee?,coffee_info
+What makes your coffee better?,coffee_info
+Tell me more about the coffee.,coffee_info
+How good is the coffee?,coffee_info
+Is your coffee good?,coffee_info
+Is it good?,coffee_info
+I want to buy your coffee.,coffee_buy
+I want your coffee.,coffee_buy
+I will take your coffee.,coffee_buy
+Give me your coffee.,coffee_buy
+I choose your coffee.,coffee_buy
