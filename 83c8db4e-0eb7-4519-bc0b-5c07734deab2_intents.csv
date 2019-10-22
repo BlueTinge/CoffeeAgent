@@ -18,3 +18,13 @@ I want your coffee.,coffee_buy
 I will take your coffee.,coffee_buy
 Give me your coffee.,coffee_buy
 I choose your coffee.,coffee_buy
+Can I get a cheaper price?,cheaper_coffee
+Can you lower the price?,cheaper_coffee
+Give me a discount.,cheaper_coffee
+Is it possible to lower the cost?,cheaper_coffee
+Can decrease the cost?,cheaper_coffee
+What is the cost?,coffee_price
+What is the price?,coffee_price
+How much does your coffee cost?,coffee_price
+How expensive is your coffee?,coffee_price
+How much is your coffee?,coffee_price
