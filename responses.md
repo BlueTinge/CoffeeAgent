@@ -25,3 +25,27 @@
 ### Other agent gives an advantage of their coffee
 
 
+User: buy_coffee
+Direct Response
+Agent: opponent_price
+Agent: opponent_notprice
+
+User: coffee_info
+Direct Response
+Agent: opponent_price
+Agent: opponent_notprice
+
+User: coffee_buy
+Direct Response
+Agent: opponent_price
+Agent: opponent_notprice
+
+User: cheaper_coffee
+Direct Response
+Agent: opponent_price
+Agent: opponent_notprice
+
+User: coffee_price
+Direct Response
+Agent: opponent_price
+Agent: opponent_notprice
