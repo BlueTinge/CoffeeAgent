@@ -13,3 +13,8 @@ Tell me more about the coffee.,coffee_info
 How good is the coffee?,coffee_info
 Is your coffee good?,coffee_info
 Is it good?,coffee_info
+I want to buy your coffee.,coffee_buy
+I want your coffee.,coffee_buy
+I will take your coffee.,coffee_buy
+Give me your coffee.,coffee_buy
+I choose your coffee.,coffee_buy
