@@ -36,6 +36,9 @@ def callPhrase(index, yn=1):
     r = index * 10
     r = r + yn
     
+    if yn==0 and r not in response:
+      return callPhrase(index)
+    
     msg = response[r][0].pop()
     response[r][1].append(msg)
     

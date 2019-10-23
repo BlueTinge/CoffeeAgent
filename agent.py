@@ -17,6 +17,7 @@ class Agent:
         self.min_price_said = self.my_price
         
         self.firstRound = True
+        self.hasSpokenAlreadyThisRound = False
 
     
     def get_intent_index(self, intent):
@@ -80,12 +81,16 @@ class Agent:
         willRespond = False;
         if addressee == my_name:
             willRespond = True;
+            print("Will respond. Has been addressed directly.")
         elif addressee == other_name:
             willRespond = False;
+            print("Will not respond. Other agent has been addressed directly.")
         else:
             if sender == my_name:
+                print("Will not respond. Is own message.")
                 willRespond = False;
             else:
+                print("Will respond. Is not addressed to anyone in particular.")
                 willRespond = True;
         
         # Store data to preserve between passes
@@ -94,12 +99,18 @@ class Agent:
         elif sender == "User":
           # get opponent_intent and opponent_price
           self.user_intent = watson_assistant.get_intent(transcript)
-          print("User intent Id'd as ",self.user_intent)
+          self.hasSpokenAlreadyThisRound = False
+          print("New round begin. User intent Id'd as ",self.user_intent)
           #user_price = price_identify.priceIdentify(transcript)
         else:# if sender == other_name:
           # get opponent_intent and opponent_price
           self.opponent_intent = watson_assistant.get_intent(transcript)
           self.opponent_price = price_identify.priceIdentify(transcript)
+        
+        # dont respond more than once per round
+        if self.hasSpokenAlreadyThisRound:
+          willRespond = False
+          print("Will not respond. Has already spoken in this round.")
         
         # update min price
         if self.opponent_price != -1:
@@ -107,6 +118,7 @@ class Agent:
         self.min_price_said = min(self.min_price_said, self.my_price)
         
         if willRespond:
+            self.hasSpokenAlreadyThisRound = True
             DidLower = True;
             
             #index = int(str(self.get_intent_index(self.user_intent))+str(self.get_context_index(addressee)))
@@ -124,14 +136,17 @@ class Agent:
                   DidLower = False;
                 else:
                   self.my_price = new_lowered_price
-                self.min_price_said = self.my_price
+                  self.min_price_said = self.my_price
+                  # Change context index to 2, if price changed
+                  context_index = 2 #CHANGE (TODO: DISCUSS)
+                  print("New lowest price, so 2nd digit changed to 2.")
               else:
                 context_index = 1
             
-            
+            #TODO: Ensure didlower agrees with indices
             
             index = int(str(intent_index)+str(context_index))
-            
+            print("Calling response: ",index,self.my_price,DidLower)
             reply["transcript"] = response_data.callResponse(index, self.my_price, DidLower)
             
             self.firstRound = False;
