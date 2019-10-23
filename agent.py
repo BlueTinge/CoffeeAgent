@@ -71,6 +71,7 @@ class Agent:
         reply['room'] = self.room_num
          
         sender = msg["sender"]
+        if (sender == None or sender == "null"): sender = "User"
         transcript = msg["transcript"]
         addressee = msg["addressee"]
         
@@ -168,6 +169,7 @@ if __name__ == "__main__" :
     while(user_input != "quit"):
         msg = {}
         user_input = input('Sender: ')
+        if user_input == "null": user_input = None
         msg["sender"] = user_input
         user_input = input('Transcript: ')
         msg["transcript"] = user_input
