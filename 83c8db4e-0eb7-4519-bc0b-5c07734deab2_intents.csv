@@ -28,3 +28,8 @@ What is the price?,coffee_price
 How much does your coffee cost?,coffee_price
 How expensive is your coffee?,coffee_price
 How much is your coffee?,coffee_price
+It costs,opponent_price
+I can give it to you for,opponent_price
+The price is,opponent_price
+The cost is,opponent_price
+It is,opponent_price

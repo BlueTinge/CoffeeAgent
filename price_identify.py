@@ -8,9 +8,10 @@ follows a rule of the price being followed by the currency or preceded by $
 
 
 
-sentence = 'I can sell the coffee for $4.54'
+sentence = 'I can sell the coffee for $404.54'
 
 price = 0
+
 def priceIdentifty(sentence):
     
     currencies = ['dollar', 'yuan', 'kuai', 'RMB']
@@ -52,6 +53,36 @@ def priceIdentifty(sentence):
 
 
 
+def lowerPrice(price, dec = True):
+    
+    min_price = 2.00
+    
+    if price < min_price:
+        return -1
+    
+    price_new = price - min_price
+    price_new = price_new * 0.9
+    price_new = price_new + min_price
+    
+    
+    if dec:
+        price_new = round(price_new, 2)
+        
+    else:
+        if price - min_price < 10:
+            price_new = price - 1        
+        price_new = int(round(price_new, 0))
+    
+    return price_new
+    
 
 
-print(priceIdentifty(sentence))
+
+
+
+
+price = priceIdentifty(sentence)
+
+print(price)
+
+print(lowerPrice(price))
