@@ -1,7 +1,7 @@
 import pika
 import json
 
-import agent
+from agent import Agent
 
 # REMEMBER TO ASK::: msg.sender? or other?
 
