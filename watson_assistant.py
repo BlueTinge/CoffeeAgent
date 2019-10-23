@@ -14,7 +14,7 @@ service = AssistantV2(
 )
 
 
-def connect_watson(transcript):
+def get_intent(transcript):
 
   # Create session.
   session_id = service.create_session(
@@ -62,5 +62,5 @@ if __name__ == "__main__" :
     user_input = input('>> ')
     
     # get intent
-    print(connect_watson(user_input))
+    print(get_intent(user_input))
     

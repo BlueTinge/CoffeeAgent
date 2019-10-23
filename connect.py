@@ -1,6 +1,10 @@
 import pika
 import json
-agent_name = 'Watson'
+
+import agent
+
+# REMEMBER TO ASK::: msg.sender? or other?
+
 credentials = pika.PlainCredentials('guest', 'guest')
 parameters = pika.ConnectionParameters(host='128.113.21.86',
                                        virtual_host='/',
@@ -8,6 +12,7 @@ parameters = pika.ConnectionParameters(host='128.113.21.86',
 connection = pika.BlockingConnection(parameters)
 channel = connection.channel()
 
+agent = Agent("Watson", 1001)
 
 def connect_to_server():
    
@@ -28,13 +33,9 @@ def callback(ch, method, properties, body):
       
     msg = json.loads(body);  
       
-    reply = {}
-    reply['inReplyTo'] = msg['currentState']
-    reply['msg.sender'] = agent_name
-    reply['transcript'] = 'Hello, would you like to buy my coffee?'
-    reply['room'] = 1001
+    reply = agent.get_response(msg);
       
-    ch.basic_publish(exchange='amq.topic', routing_key='output-gate', body=json.dumps(reply))
+    ch.basic_publish(exchange='amq.topic', routing_key='output-gate', body=json.dumps(reply));
 connect_to_server();
 
     #channel.queue_declare(queue='amq.topic')
