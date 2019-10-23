@@ -11,26 +11,50 @@ class Agent:
         self.user_price = -1
         self.opponent_intent = ""
         self.opponent_price = -1
+        
+        self.my_price = 12
+        self.min_price_said = self.my_price
+        
+        self.firstRound = True
 
     
-    def create_reply(self, msg, willRespond, other_price):
-        
-        if willRespond and msg["sender"] == "User":
-            
-            print('respond to user')
-            
-            
-        
-        if willRespond and msg["sender"] != "User":
-            
-            if other_price == -1:
-                
-                print('other agent had no price')
-            
-            else:
-                
-                print('other agent had a price')
+    def get_intent_index(self, intent):
+    # User: buy_coffee (Only first round. Switch to coffee_info if detected in other rounds.)
     
+      if intent == "buy_coffee":
+        if self.firstRound:
+          return 1
+        else:
+          intent = "coffee_info"
+      
+      if intent == "coffee_info":
+        return 2
+        
+      if intent == "coffee_buy":
+        return 3
+
+      if intent == "cheaper_coffee":
+        return 4
+
+      if intent == "coffee_price":
+        return 5
+        
+      # if it gets to this point just do coffee_info
+      return 2
+
+    def get_context_index(self, addressee):
+      
+      # 1 if we direct respond to user
+      
+      if addressee == self.my_name:
+        return 1
+      
+      # 2 if other agent gave price
+      elif self.opponent_price != -1:
+        return 2
+        
+      # 3 if other agent did not give price:
+      else: return 3
     
     # given dictionary, return reply
     def get_response(self,msg):
@@ -38,7 +62,7 @@ class Agent:
         reply = {}
         reply['inReplyTo'] = msg['currentState']
         reply['sender'] = self.my_name
-        reply['transcript'] = "null"
+        reply['transcript'] = "Please buy my coffee. I know you want to." #this shouldnt be said. only here as emergency backup
         reply['room'] = self.room_num
          
         sender = msg["sender"]
@@ -75,10 +99,37 @@ class Agent:
           self.opponent_intent = watson_assistant.get_intent(transcript)
           other_price = price_identify.priceIdentify(transcript)
           self.opponent_price = other_price
-          
-        # now select correct response
         
+        # update min price
+        if other_price != -1:
+          self.min_price_said = min(self.min_price_said, other_price)
+        self.min_price_said = min(self.min_price_said, self.my_price)
         
+        if willRespond:
+            self.firstRound = False;
+            haveLowered = False;
+            
+            #index = int(str(self.get_intent_index(self.user_intent))+str(self.get_context_index(addressee)))
+            intent_index = self.get_intent_index(self.user_intent)
+            context_index = self.get_context_index(addressee)
+            index = int(str(intent_index)+str(context_index))
+            
+            #lower price if we can
+            if index != 51 and index != 53:
+              # is the opponents price bigger than mine?
+              if self.min_price_said < self.my_price or intent_index == 4:
+                # calc new price
+                self.my_price = price_identify.lowerPrice(self.min_price_said)
+                if (self.my_price < self.min_price_said)
+                  haveLowered = True;
+                self.min_price_said = self.my_price
+              else:
+                context_index = 1
+            
+            index = int(str(intent_index)+str(context_index))
+            
+            reply["transcript"] = callResponse(index, self.my_price, haveLowered)
+            
         return reply;
         
         
