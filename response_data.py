@@ -26,6 +26,7 @@ response[531] = response[411]
 
 def resetResponse(index):
     response[index][0] = response[index][1].copy()
+    response[index][0].reverse()
     response[index][1] = []
     
 
