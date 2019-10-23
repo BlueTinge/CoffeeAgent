@@ -46,11 +46,7 @@ def callPhrase(index, yn=1):
 
 
 
-def callResponse(index, price, min_price=2.0):
-    
-    yn = 1
-    if price < min_price:
-        yn = 0
+def callResponse(index, price, yn=True):
     
     phrase = callPhrase(index, yn)
     
