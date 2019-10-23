@@ -3,6 +3,7 @@ import price_identify
 import response_data
 
 MIN_PRICE = 2.0
+DEC = True
 
 class Agent:
 
@@ -133,7 +134,7 @@ class Agent:
               # is the opponents price bigger than mine?
               if self.min_price_said < self.my_price or intent_index == 4:
                 # calc new price
-                new_lowered_price = price_identify.lowerPrice(self.min_price_said, MIN_PRICE)
+                new_lowered_price = price_identify.lowerPrice(self.min_price_said, MIN_PRICE, DEC)
                 if (new_lowered_price == -1):
                   DidLower = False;
                   self.my_price = MIN_PRICE
@@ -150,7 +151,7 @@ class Agent:
             
             index = int(str(intent_index)+str(context_index))
             print("Calling response: ",index,self.my_price,DidLower)
-            reply["transcript"] = response_data.callResponse(index, self.my_price, DidLower)
+            reply["transcript"] = response_data.callResponse(index, self.my_price, DidLower, DEC)
             
             self.firstRound = False;
             
