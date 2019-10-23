@@ -12,6 +12,26 @@ class Agent:
         self.opponent_intent = ""
         self.opponent_price = -1
 
+    
+    def create_reply(self, msg, willRespond, other_price):
+        
+        if willRespond and msg["sender"] == "User":
+            
+            print('respond to user')
+            
+            
+        
+        if willRespond and msg["sender"] != "User":
+            
+            if other_price == -1:
+                
+                print('other agent had no price')
+            
+            else:
+                
+                print('other agent had a price')
+    
+    
     # given dictionary, return reply
     def get_response(self,msg):
           
