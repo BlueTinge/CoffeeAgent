@@ -67,7 +67,7 @@ class Agent:
         reply = {}
         reply['inReplyTo'] = msg['currentState']
         reply['sender'] = self.my_name
-        reply['transcript'] = "Please buy my coffee. I know you want to." #this shouldnt be said. only here as emergency backup
+        reply['transcript'] = "Please buy my coffee. " #this shouldnt be said. only here as emergency backup
         reply['room'] = self.room_num
          
         sender = msg["sender"]
@@ -156,6 +156,7 @@ class Agent:
             
             self.firstRound = False;
             
+        print(reply)
         return reply;
         
         

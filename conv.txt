@@ -1,0 +1,294 @@
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: User
+Transcript: I would like to buy coffee
+Addressee: Celia
+User intent Id'd as  buy_coffee
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: Celia
+Transcript: You can buy my coffee for $6.00
+Addressee: Null
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': "I sell coffee too, I can give it to you for $5.60 and it's a local specialty.", 'room': 1001}
+Sender: Watson
+Transcript: I sell coffee too, I can give it to you for $5.60 and it's a local specialty.
+Addressee: Null
+Message from self
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: User
+Transcript: Can you give me a better price?
+Addressee: Watson
+User intent Id'd as  cheaper_coffee
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Sure, it has the richest flavour you will ever taste But for you, I would be willing to sell my coffee for just $5.24. ', 'room': 1001}
+Sender: Celia
+Transcript: I can sell my coffee for just $1
+Addressee: Null
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'At the end of your life, every experience you have ever had will flash before your eyes, and one by one, you will forget each one. Except for the taste of my coffee. I implore you: buy my coffee. Not for me, but for you.', 'room': 1001}
+Sender: Traceback (most recent call last):
+  File "agent.py", line 151, in <module>
+    return reply;
+KeyboardInterrupt
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: User
+Transcript: Can I buy your coffee?
+Addressee: Watson
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  coffee_buy
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Hand over the cash.', 'room': 1001}
+Sender: Watson
+Transcript: Hand over the cash.
+Addressee: Null
+Will not respond. Is own message.
+Message from self
+Will not respond. Has already spoken in this round.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: User
+Transcript: Traceback (most recent call last):
+  File "agent.py", line 165, in <module>
+    user_input = input('Transcript: ')
+KeyboardInterrupt
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: User
+Transcript: I want a cup of joe
+Addressee: Watson
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  cheaper_coffee
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Sure, to know this taste is to know true bliss. But for you, I would be willing to sell my coffee for just $11.00. ', 'room': 1001}
+Sender: Watson
+Transcript:
+Addressee: Null
+Will not respond. Is own message.
+Message from self
+Will not respond. Has already spoken in this round.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: Celia
+Transcript: I can sell coffee too! I will sell it for just $5.00
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: User
+Transcript: Can I learn more about your coffee?
+Addressee: Celia
+Will not respond. Other agent has been addressed directly.
+New round begin. User intent Id'd as  coffee_info
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: Celia
+Transcript: Sure. My coffee is from all natural sources.
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'But would you like to try my coffee? I think you would, since I get tons of people coming back for more.', 'room': 1001}
+Sender: Traceback (most recent call last):
+  File "agent.py", line 163, in <module>
+    user_input = ""
+KeyboardInterrupt
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: User
+Transcript: Coffee
+Addressee: Watson
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  buy_coffee
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'You can buy my coffee, it is only $12 and it has the richest flavour you will ever taste', 'room': 1001}
+Sender: Celia
+Transcript: Hah! That is pathetic. I can sell my coffee for $4.
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: User
+Transcript: Can you go any lower on price?
+Addressee: Watson
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  cheaper_coffee
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'That price is still quite high, I can sell it for 3.80 instead.', 'room': 1001}
+Sender: Celia
+Transcript: I can go even lower. One dollah.
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: User
+Transcript: I think I will buy coffee from you, Celia, if thats okay.
+Addressee: Celia
+Will not respond. Other agent has been addressed directly.
+New round begin. User intent Id'd as  buy_coffee
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: Celia
+Transcript: That would be lovely. I am happy to have your business!
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': "You should buy my coffee because it's a local specialty..", 'room': 1001}
+Sender: User
+Transcript: I'm not interested in your coffee.
+Addressee: Watson
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  coffee_buy
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Hand over the cash.', 'room': 1001}
+Sender: Traceback (most recent call last):
+  File "agent.py", line 166, in <module>
+    user_input = input('Sender: ')
+KeyboardInterrupt
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: Watson
+Transcript: Traceback (most recent call last):
+  File "agent.py", line 168, in <module>
+    user_input = input('Transcript: ')
+KeyboardInterrupt
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: User
+Transcript: Please sell me coffee
+Addressee: Celia
+Will not respond. Other agent has been addressed directly.
+New round begin. User intent Id'd as  buy_coffee
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: I will sell you coffee. For $15
+Transcript: Traceback (most recent call last):
+  File "agent.py", line 168, in <module>
+    user_input = input('Transcript: ')
+KeyboardInterrupt
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: User
+Transcript: Please sell me coffee.
+Addressee: Watson
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  buy_coffee
+Calling response:  11 12 True
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'You can buy my coffee, it is only $12 and it is a special mixture of blends that no other coffee can match', 'room': 1001}
+Sender: Celia
+Transcript: I can do better than that. $6
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: User
+Transcript: Tell me more about your coffee, please
+Addressee: Celia
+Will not respond. Other agent has been addressed directly.
+New round begin. User intent Id'd as  coffee_info
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: Celia
+Transcript: I can tell you quite a lot about my coffee. It was grown in South America, from only the finest beans.
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+New lowest price, so 2nd digit changed to 2.
+Calling response:  22 5.6 True
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'I sell coffee too, I can give it to you for $5.60 and it has the richest flavour you will ever taste', 'room': 1001}
+Sender: Traceback (most recent call last):
+  File "agent.py", line 166, in <module>
+    user_input = input('Sender: ')
+KeyboardInterrupt
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python agent.py
+Sender: User
+Transcript: Please tell me more about your coffee
+Addressee: Watson
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  coffee_info
+Calling response:  21 12 True
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'You should buy my coffee because it is a special mixture of blends that no other coffee can match.', 'room': 1001}
+Sender: Celia
+Transcript: My coffee is a cheap $1
+Addressee: Null
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: User
+Transcript: Celia I want your coffee more than his
+Addressee: Celia
+Will not respond. Other agent has been addressed directly.
+New round begin. User intent Id'd as  coffee_buy
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'Please buy my coffee. I know you want to.', 'room': 1001}
+Sender: Thanks!
+Transcript: Thanks! I know you like my cheap coffee.
+Addressee: Nul
+Will respond. Is not addressed to anyone in particular.
+Calling response:  33 12 False
+{'inReplyTo': '', 'sender': 'Watson', 'transcript': 'That price is still quite high, I can sell it for 12 instead.', 'room': 1001}
+Sender:
+
+C:\Users\frankj6\Documents\CogComp\CoffeeAgent>python connect.py
+ [*] Waiting for messages. To exit press CTRL+C
+ [x] Received b'{"sender":"Celia","transcript":"Hello, I\'m, Johnson, I can sell you my delicious coffee for $7.25","addressee":null,"state":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":1},"speaker":"Celia","currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":2}}'
+Will respond. Is not addressed to anyone in particular.
+New lowest price, so 2nd digit changed to 2.
+Calling response:  22 5.14 True
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't2', 'conversation_turn_id': 2}, 'sender': 'Watson', 'transcript': 'I sell coffee too, I can give it to you for $5.14 and it has the richest flavour you will ever taste', 'room': 1001}
+ [x] Received b'{"transcript":"@Watson where is your coffee from ","addressee":"Watson","sender":null,"currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":4}}'
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  coffee_buy
+Calling response:  31 5.14 True
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't0', 'conversation_turn_id': 4}, 'sender': 'Watson', 'transcript': 'Hand over the cash.', 'room': 1001}
+ [x] Received b'{"sender":"Celia","transcript":"Johnson\'s the name, selling coffee\'s the game, and yes my coffee is the best around, just ask professor Su.","addressee":null,"state":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":5},"speaker":"Celia","currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":6}}'
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't2', 'conversation_turn_id': 6}, 'sender': 'Watson', 'transcript': 'Please buy my coffee. ', 'room': 1001}
+ [x] Received b'{"transcript":"@Celia where is your coffee from ","addressee":"Celia","sender":null,"currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":8}}'
+Will not respond. Other agent has been addressed directly.
+New round begin. User intent Id'd as  coffee_buy
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't0', 'conversation_turn_id': 8}, 'sender': 'Watson', 'transcript': 'Please buy my coffee. ', 'room': 1001}
+ [x] Received b'{"sender":"Celia","transcript":"Our coffee is homemade from fresh ingredients. It is brewed fresh and served hot. Our coffee is perfect blend of smooth and strong. You won\'t find better coffee anywhere else.","addressee":null,"state":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":1},"speaker":"Celia","currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":2}}'
+Will respond. Is not addressed to anyone in particular.
+Calling response:  31 5.14 True
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't2', 'conversation_turn_id': 2}, 'sender': 'Watson', 'transcript': 'Sure! Here you go!', 'room': 1001}
+ [x] Received b'{"transcript":"@Watson how much for a Cup of coffee again ","addressee":"Watson","sender":null,"currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":4}}'
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  buy_coffee
+Calling response:  21 5.14 True
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't0', 'conversation_turn_id': 4}, 'sender': 'Watson', 'transcript': 'You should buy my coffee because I import my beans from the best plantations..', 'room': 1001}
+ [x] Received b'{"sender":"Celia","transcript":"Hello, I\'m, Johnson, I can sell you my delicious coffee for $3.5","addressee":null,"state":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":5},"speaker":"Celia","currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":6}}'
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't2', 'conversation_turn_id': 6}, 'sender': 'Watson', 'transcript': 'Please buy my coffee. ', 'room': 1001}
+ [x] Received b'{"transcript":"@Watson what is the price for a Cup of coffee ","addressee":"Watson","sender":null,"currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":8}}'
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  buy_coffee
+New lowest price, so 2nd digit changed to 2.
+Calling response:  22 2.89 True
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't0', 'conversation_turn_id': 8}, 'sender': 'Watson', 'transcript': "I can sell you coffee for $2.89 instead and it's so popular I am sold out most days.", 'room': 1001}
+ [x] Received b'{"sender":"Celia","transcript":"They brew their coffee once per day! It\'s never fresh.","addressee":null,"state":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":9},"speaker":"Celia","currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":10}}'
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't2', 'conversation_turn_id': 10}, 'sender': 'Watson', 'transcript': 'Please buy my coffee. ', 'room': 1001}
+ [x] Received b'{"transcript":"@Watson what do you think about that ","addressee":"Watson","sender":null,"currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":12}}'
+Will respond. Has been addressed directly.
+New round begin. User intent Id'd as  coffee_price
+Calling response:  51 2.89 True
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't0', 'conversation_turn_id': 12}, 'sender': 'Watson', 'transcript': 'You can get my coffee for $2.89.', 'room': 1001}
+ [x] Received b'{"sender":"Celia","transcript":"My cups are collectible, so you can use it forever.","addressee":null,"state":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":13},"speaker":"Celia","currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":14}}'
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't2', 'conversation_turn_id': 14}, 'sender': 'Watson', 'transcript': 'Please buy my coffee. ', 'room': 1001}
+ [x] Received b'{"sender":"Celia","transcript":"Good I\'m glad we came to an agreement, if you come back tomorrow it\'s on me.","addressee":null,"state":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t0","conversation_turn_id":15},"speaker":"Celia","currentState":{"conversation_state_id":"sNormOn","conversation_last_transition_id":"t2","conversation_turn_id":16}}'
+Will respond. Is not addressed to anyone in particular.
+Will not respond. Has already spoken in this round.
+{'inReplyTo': {'conversation_state_id': 'sNormOn', 'conversation_last_transition_id': 't2', 'conversation_turn_id': 16}, 'sender': 'Watson', 'transcript': 'Please buy my coffee. ', 'room': 1001}
+Traceback (most recent call last):
+  File "connect.py", line 46, in <module>
+    channel.start_consuming()
+  File "C:\ProgramData\Miniconda3\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\pika\adapters\blocking_connection.py", line 825, in process_data_events
+    self._flush_output(common_terminator)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\pika\adapters\blocking_connection.py", line 513, in _flush_output
+    self._impl.ioloop.poll()
+  File "C:\ProgramData\Miniconda3\lib\site-packages\pika\adapters\select_connection.py", line 576, in poll
+    self._poller.poll()
+  File "C:\ProgramData\Miniconda3\lib\site-packages\pika\adapters\select_connection.py", line 953, in poll
+
+How it should work?
+
+How do integration?
+
+3 perspectives:
+   Price strategy
+   Quality description strategy
+   Response strategy
+   
+Code
+Intents
