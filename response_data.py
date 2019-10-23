@@ -51,8 +51,6 @@ def callResponse(index, price, yn=True):
     
     phrase = callPhrase(index, yn)
     
-    
-    
     phrase_wprice = ''
     
     p = phrase.find('@p')
@@ -64,9 +62,6 @@ def callResponse(index, price, yn=True):
         phrase_wprice = phrase_wprice + phrase[p+2:len(phrase)]
     else:
         phrase_wprice = phrase
-        
-    
-    
     
     phrase_complete = ''
     
