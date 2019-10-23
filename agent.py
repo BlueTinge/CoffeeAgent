@@ -2,7 +2,7 @@ import watson_assistant
 import price_identify
 import response_data
 
-MIN_PRICE = 2
+MIN_PRICE = 2.0
 
 class Agent:
 
@@ -15,7 +15,7 @@ class Agent:
         self.opponent_intent = ""
         self.opponent_price = -1
         
-        self.my_price = 12
+        self.my_price = 12.0
         self.min_price_said = self.my_price
         
         self.firstRound = True
