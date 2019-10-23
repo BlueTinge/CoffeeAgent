@@ -49,7 +49,7 @@ def callPhrase(index, yn=1):
 
 
 
-def callResponse(index, price, yn=True):
+def callResponse(index, price, yn, dec=True):
     
     
     phrase = callPhrase(index, yn)
@@ -59,9 +59,12 @@ def callResponse(index, price, yn=True):
     p = phrase.find('@p')
     if p != -1:
         phrase_wprice = phrase_wprice + phrase[0:p]
-        phrase_wprice = phrase_wprice + str(round(price, 2))
-        if phrase_wprice[-2] == '.':
-            phrase_wprice = phrase_wprice + '0'
+        if dec:
+            phrase_wprice = phrase_wprice + str(round(price, 2))
+            if phrase_wprice[-2] == '.':
+                phrase_wprice = phrase_wprice + '0'
+        else:
+            phrase_wprice = phrase_wprice + str(int(price))
         phrase_wprice = phrase_wprice + phrase[p+2:len(phrase)]
     else:
         phrase_wprice = phrase
