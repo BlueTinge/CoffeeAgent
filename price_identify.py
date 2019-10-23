@@ -60,7 +60,7 @@ def priceIdentify(sentence):
 def lowerPrice(price, min_price, dec = True):
     
     price_new = price - min_price
-    price_new = price_new * 0.9
+    price_new = price_new * 0.8
     price_new = price_new + min_price
     
     
