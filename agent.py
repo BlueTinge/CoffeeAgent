@@ -2,7 +2,7 @@ import watson_assistant
 import price_identify
 import response_data
 
-MIN_PRICE = 2.0
+MIN_PRICE = 1.98
 DEC = True
 
 class Agent:
