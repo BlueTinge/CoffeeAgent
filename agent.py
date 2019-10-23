@@ -8,9 +8,9 @@ class Agent:
         self.room_num = room_num
         
         self.user_intent = ""
-        self.user_price = None
+        self.user_price = -1
         self.opponent_intent = ""
-        self.opponent_price = None
+        self.opponent_price = -1
 
     # given dictionary, return reply
     def get_response(self,msg):
