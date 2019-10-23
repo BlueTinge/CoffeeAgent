@@ -1,4 +1,4 @@
-    
+from random import randint
 
 response = {}
 response[111] = {0: ['My coffee is really good, @a and I can sell it to you for $@p', 'I sell coffee, its only $@p and @a', 'You can buy my coffee, it is only $@p and @a'], 1: []}
@@ -28,9 +28,10 @@ def resetResponse(index):
     response[index][0] = response[index][1].copy()
     response[index][0].reverse()
     response[index][1] = []
-    
 
-def callResponse(index, yn=1):
+
+
+def callPhrase(index, yn=1):
     
     r = index * 10
     r = r + yn
@@ -44,4 +45,53 @@ def callResponse(index, yn=1):
     return msg
 
 
-advantages = {0: ['it\'s made using a special family technique.', 'I import my beans from the best plantations.', 'it\'s so popular I am sold out most days.', 'it\'s a local specialty.', 'it has the richest flavour you will ever taste', 'it is the only coffee that tastes as good as it smells', 'it is a special mixture of blends that no other coffee can match', 'I get tons of people coming back for more.', 'I\'m extremely strict in the quality of every cup.', 'to know this taste is to know true bliss'], 1: []}
+
+def callResponse(index, price, yn=True):
+    
+    phrase = callPhrase(index, yn)
+    
+    
+    
+    phrase_wprice = ''
+    
+    p = phrase.find('@p')
+    if p != -1:
+        phrase_wprice = phrase_wprice + phrase[0:p]
+        phrase_wprice = phrase_wprice + str(round(price, 2))
+        if phrase_wprice[-2] == '.':
+            phrase_wprice = phrase_wprice + '0'
+        phrase_wprice = phrase_wprice + phrase[p+2:len(phrase)]
+        
+    
+    
+    
+    phrase_complete = ''
+    
+    a = phrase_wprice.find('@a')
+    if a != -1:
+        phrase_complete = phrase_complete + phrase_wprice[0:a]
+        
+        ad = advantages[0][randint(0, len(advantages[0])-1)]
+        advantages[1].append(ad)
+        advantages[0].remove(ad)
+        if len(advantages[0]) == 0:
+            advantages[0] = advantages[1].copy()
+            advantages[1] = []
+        
+        
+        phrase_complete = phrase_complete + ad
+        
+        phrase_complete = phrase_complete + phrase_wprice[a+2:len(phrase_wprice)]
+    
+    
+    return phrase_complete
+    
+    
+
+
+
+
+advantages = {0: ['it\'s made using a special family technique.', 'I import my beans from the best plantations.', 'it\'s so popular I am sold out most days.', 'it\'s a local specialty.', 'it has the richest flavour you will ever taste', 'it is the only coffee that tastes as good as it smells', 'it is a special mixture of blends that no other coffee can match', 'I get tons of people coming back for more.', 'I\'m extremely strict in the quality of every cup.', 'to know this taste is to know true bliss.'], 1: []}
+
+#for i in range(0,10):
+#    callResponse(11, 34.5)
