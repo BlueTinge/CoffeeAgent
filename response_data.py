@@ -48,6 +48,7 @@ def callPhrase(index, yn=1):
 
 def callResponse(index, price, yn=True):
     
+    
     phrase = callPhrase(index, yn)
     
     
@@ -61,6 +62,8 @@ def callResponse(index, price, yn=True):
         if phrase_wprice[-2] == '.':
             phrase_wprice = phrase_wprice + '0'
         phrase_wprice = phrase_wprice + phrase[p+2:len(phrase)]
+    else:
+        phrase_wprice = phrase
         
     
     
@@ -82,7 +85,8 @@ def callResponse(index, price, yn=True):
         phrase_complete = phrase_complete + ad
         
         phrase_complete = phrase_complete + phrase_wprice[a+2:len(phrase_wprice)]
-    
+    else:
+        phrase_complete = phrase_wprice
     
     return phrase_complete
     
