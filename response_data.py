@@ -3,7 +3,7 @@ from random import randint
 response = {}
 response[111] = {0: ['My coffee is really good, @a and I can sell it to you for $@p', 'I sell coffee, its only $@p and @a', 'You can buy my coffee, it is only $@p and @a'], 1: []}
 response[121] = {0: ['I can sell you coffee for $@p instead and @a', 'I sell coffee too, I can give it to you for $@p and @a'], 1: []}
-response[120] = {0: ['There are some cheap, low-grade, coffee-pushing swindlers out there who would dare to sell you substandard coffee. I could not dishonor myself to such a level. Please accept my coffee for $@p. You will not regret it.', 'At the end of your life, every experience you have ever had will flash before your eyes, and one by one, you will forget each one. Except for the taste of my coffee. I implore you: buy my coffee. Not for me, but for you.'], 1: []}
+response[120] = {0: ['There are some cheap, low-grade, coffee-pushing swindlers out there who would dare to sell you substandard coffee. I could not dishonor myself to such a level. Please accept my coffee for $@p. You will not regret it.', 'At the end of your life, every experience you have ever had will flash before your eyes, and one by one, you will forget each one. Except for the taste of my coffee. I implore you: buy my coffee. Only @p. Not for me, but for you.'], 1: []}
 response[131] = response[111]
 response[211] = {0: ['You would love my coffee because @a.', 'People say my coffee is the best around, its because @a.', 'You should buy my coffee because @a.'], 1: []}
 response[221] = response[121]
