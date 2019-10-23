@@ -1,5 +1,6 @@
 import watson_assistant
 import price_identify
+import response_data
 
 class Agent:
 
@@ -93,21 +94,20 @@ class Agent:
         elif sender == "User":
           # get opponent_intent and opponent_price
           self.user_intent = watson_assistant.get_intent(transcript)
+          print("User intent Id'd as ",self.user_intent)
           #user_price = price_identify.priceIdentify(transcript)
         else:# if sender == other_name:
           # get opponent_intent and opponent_price
           self.opponent_intent = watson_assistant.get_intent(transcript)
-          other_price = price_identify.priceIdentify(transcript)
-          self.opponent_price = other_price
+          self.opponent_price = price_identify.priceIdentify(transcript)
         
         # update min price
-        if other_price != -1:
-          self.min_price_said = min(self.min_price_said, other_price)
+        if self.opponent_price != -1:
+          self.min_price_said = min(self.min_price_said, self.opponent_price)
         self.min_price_said = min(self.min_price_said, self.my_price)
         
         if willRespond:
-            self.firstRound = False;
-            haveLowered = False;
+            DidLower = True;
             
             #index = int(str(self.get_intent_index(self.user_intent))+str(self.get_context_index(addressee)))
             intent_index = self.get_intent_index(self.user_intent)
@@ -119,16 +119,25 @@ class Agent:
               # is the opponents price bigger than mine?
               if self.min_price_said < self.my_price or intent_index == 4:
                 # calc new price
-                self.my_price = price_identify.lowerPrice(self.min_price_said)
-                if (self.my_price < self.min_price_said)
-                  haveLowered = True;
+                new_lowered_price = price_identify.lowerPrice(self.min_price_said)
+                if (new_lowered_price == -1):
+                  DidLower = False;
+                else:
+                  self.my_price = new_lowered_price
                 self.min_price_said = self.my_price
               else:
                 context_index = 1
             
+            
+            
             index = int(str(intent_index)+str(context_index))
             
-            reply["transcript"] = callResponse(index, self.my_price, haveLowered)
+            callresponse = response_data.callResponse(index, self.my_price, DidLower)
+            reply["transcript"] = callresponse
+            
+            print("HERE,", index, self.my_price, DidLower, "CR:",callresponse)
+            
+            self.firstRound = False;
             
         return reply;
         
