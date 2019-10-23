@@ -8,14 +8,11 @@ follows a rule of the price being followed by the currency or preceded by $
 
 
 
-sentence = 'I can sell the coffee for $404.54'
-
-price = 0
-
 def priceIdentifty(sentence):
     
     currencies = ['dollar', 'yuan', 'kuai', 'RMB']
     curr = 'None'
+    price = -1
     
     for i in currencies:
         if i in sentence:
@@ -34,7 +31,10 @@ def priceIdentifty(sentence):
             
         temp = temp + 1
         
-        price = float(sentence[temp : curr_start])
+        try:
+            price = float(sentence[curr_start : temp])
+        except:
+            price = -1
     
     
     if '$' in sentence:
@@ -47,7 +47,11 @@ def priceIdentifty(sentence):
             if temp == len(sentence):
                 break
         
-        price = float(sentence[curr_start : temp])
+        try:
+            price = float(sentence[curr_start : temp])
+        except:
+            price = -1
+        
 
     return price
 
@@ -77,12 +81,3 @@ def lowerPrice(price, dec = True):
     
 
 
-
-
-
-
-price = priceIdentifty(sentence)
-
-print(price)
-
-print(lowerPrice(price))
