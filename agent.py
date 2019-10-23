@@ -132,10 +132,7 @@ class Agent:
             
             index = int(str(intent_index)+str(context_index))
             
-            callresponse = response_data.callResponse(index, self.my_price, DidLower)
-            reply["transcript"] = callresponse
-            
-            print("HERE,", index, self.my_price, DidLower, "CR:",callresponse)
+            reply["transcript"] = response_data.callResponse(index, self.my_price, DidLower)
             
             self.firstRound = False;
             
