@@ -57,12 +57,7 @@ def priceIdentify(sentence):
 
 
 
-def lowerPrice(price, dec = True):
-    
-    min_price = 2.00
-    
-    if price < min_price:
-        return -1
+def lowerPrice(price, min_price, dec = True):
     
     price_new = price - min_price
     price_new = price_new * 0.9
@@ -76,6 +71,12 @@ def lowerPrice(price, dec = True):
         if price - min_price < 10:
             price_new = price - 1        
         price_new = int(round(price_new, 0))
+    
+    if price_new < min_price:
+        if price <= min_price:
+            return -1
+        else:
+            return min_price
     
     return price_new
     
