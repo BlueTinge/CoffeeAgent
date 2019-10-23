@@ -8,7 +8,7 @@ follows a rule of the price being followed by the currency or preceded by $
 
 
 
-def priceIdentifty(sentence):
+def priceIdentify(sentence):
     
     currencies = ['dollar', 'yuan', 'kuai', 'RMB']
     curr = 'None'

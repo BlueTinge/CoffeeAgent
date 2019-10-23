@@ -69,11 +69,11 @@ class Agent:
         elif sender == "User":
           # get opponent_intent and opponent_price
           self.user_intent = watson_assistant.get_intent(transcript)
-          #user_price = price_identify.priceIndentify(transcript)
+          #user_price = price_identify.priceIdentify(transcript)
         else:# if sender == other_name:
           # get opponent_intent and opponent_price
           self.opponent_intent = watson_assistant.get_intent(transcript)
-          other_price = price_identify.priceIndentify(transcript)
+          other_price = price_identify.priceIdentify(transcript)
           self.opponent_price = other_price
           
         # now select correct response
