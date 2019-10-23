@@ -2,6 +2,8 @@ import watson_assistant
 import price_identify
 import response_data
 
+MIN_PRICE = 2
+
 class Agent:
 
     def __init__(self, name, room_num):
@@ -131,9 +133,10 @@ class Agent:
               # is the opponents price bigger than mine?
               if self.min_price_said < self.my_price or intent_index == 4:
                 # calc new price
-                new_lowered_price = price_identify.lowerPrice(self.min_price_said)
+                new_lowered_price = price_identify.lowerPrice(self.min_price_said, MIN_PRICE)
                 if (new_lowered_price == -1):
                   DidLower = False;
+                  self.my_price = MIN_PRICE
                 else:
                   self.my_price = new_lowered_price
                   self.min_price_said = self.my_price
